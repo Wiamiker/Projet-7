@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom'
 
 const CardWrapper = styled(Link)`
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: 340px;
+  height: 340px;
   border-radius: 10px;
   overflow: hidden;
   background-color: ${colors.primaryColor};
@@ -16,7 +16,8 @@ const CardWrapper = styled(Link)`
   box-shadow: 0 4px 20px rgba(0,0,0,0.2);
 
   @media(max-width: 576px){
-   height: 250px;
+   height: 255px;
+   width: 335px;
    
   }
 `;

@@ -7,10 +7,6 @@ const HeaderContainer = styled.header`
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-
-  @media(max_width: 576px){
-    padding: 0;
-  }
 `
 
 const HomeLogo = styled.img`
@@ -25,9 +21,12 @@ const NavLinks = styled.nav`
   display: flex;
   gap: 15px;
 
-  @media(max-width: 576px){
-   font-size: 12px;
+  
+   @media (max-width: 576px) {
+    align-items: flex-end;
+    gap: 10px;
   }
+  
 `
 
 const StyledNavLink = styled(NavLink)`

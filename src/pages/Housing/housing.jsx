@@ -11,6 +11,10 @@ const HousingContainer = styled.div`
   padding: 20px;
   max-width: 1200px;
   margin: auto;
+
+   @media(max-width: 576px){
+    padding: 10px 20px 10px 20px;
+  }
 `
 
 const ContentWrapper = styled.div`
@@ -18,6 +22,11 @@ const ContentWrapper = styled.div`
   justify-content: space-between;
   flex-wrap: wrap;
   margin-top: 20px;
+
+ @media(max-width: 576px){
+    flex-direction: column;
+    gap: 15px;
+  }
 `
 
 const LeftBlock = styled.div`
@@ -30,24 +39,44 @@ const RightBlock = styled.div`
   flex-direction: column;
   align-items: flex-end;
   min-width: 150px;
+
+    @media(max-width: 576px){
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
 `
 
 const Title = styled.h1`
   color: #ff6060;
   font-size: 24px;
   margin: 0;
+
+  
+  @media(max-width: 576px){
+    font-size: 18px;
+  }
 `
 
 const Location = styled.h2`
   font-size: 18px;
   font-weight: normal;
   margin: 10px 0;
+
+  @media(max-width: 576px){
+  font-size: 14px;
+  }
 `
 
 const TagsWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+
+  @media(max-width: 576px){
+    
+  }
 `
 
 const Tag = styled.span`
@@ -56,6 +85,10 @@ const Tag = styled.span`
   border-radius: 10px;
   padding: 5px 10px;
   font-size: 12px;
+
+  @media(max-width: 576px){
+    font-size: 10px;
+  }
 `
 
 const Host = styled.div`
@@ -81,18 +114,15 @@ const HostPicture = styled.img`
 
 const CollapseWrapper = styled.div`
   display: flex;
-  flex-direction: column;
   gap: 20px;
   margin-top: 40px;
 
-  @media (min-width: 768px) {
-    flex-direction: row;
-    justify-content: space-between;
+  @media (max-width: 576px) {
+   gap: 0;
+   margin-top: 0;
+   flex-direction: column;
   }
 
-  & > * {
-    flex: 1;
-  }
 `
 const StyledList = styled.ul`
     list-style-type: none; /* Enlève les points */
@@ -152,7 +182,7 @@ function Housing() {
         </ContentWrapper>
 
         <CollapseWrapper>
-          <Collapse title="Description" content={<p>housingData.description</p>} />
+          <Collapse title="Description" content={housingData.description} />
           <Collapse
             title="Équipements"
             content={

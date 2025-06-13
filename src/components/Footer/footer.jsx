@@ -10,6 +10,16 @@ const FooterContainer = styled.footer`
   align-items: center;
   justify-content: center;
   margin-top: 30px;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-bottom: calc(-50vw + 50%);
+
+    @media(max-width: 576px){
+    font-size: 12px;
+    padding: 15px 10px;
+    height: 200px;
+  }
+   
 `
 
 const FooterLogo = styled.img`

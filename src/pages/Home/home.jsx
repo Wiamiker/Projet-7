@@ -7,6 +7,16 @@ import colors from '../../../utils/style/color'
 import { useEffect, useState} from 'react'
 
 
+const PageWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  @media(max-width: 576px){
+  padding: 20px;
+  }
+`
+
 const CardsContainer = styled.div`
   display: grid;
   gap: 24px;
@@ -16,6 +26,7 @@ const CardsContainer = styled.div`
   background: ${colors.backgroundColor};
   border-radius: 30px;
   margin-top: 30px;
+  flex:1;
 
     @media (max-width: 576px){
     
@@ -46,7 +57,7 @@ function Home() {
               });
           }, []);
     return(
-        <div>
+        <PageWrapper>
             <Header />
             <Banner 
                title="Chez vous, partout et ailleurs" 
@@ -65,7 +76,7 @@ function Home() {
       </CardsContainer>
             <Footer />
             
-        </div>
+        </PageWrapper>
     )
 
 }

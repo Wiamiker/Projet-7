@@ -2,6 +2,15 @@ import Header from '../../components/Header/header'
 import Banner from '../../components/Banner/Banner'
 import Footer from '../../components/Footer/footer'
 import Collapse from '../../components/Collapse/collapse'
+import styled from 'styled-components'
+
+
+const WrapperSections= styled.div`
+ 
+@media(max-width: 576px){
+ margin: 30px 20px;
+}
+`
 
 const aboutSections = [
   {
@@ -31,9 +40,11 @@ function About() {
     <div>
       <Header />
       <Banner image="/src/assets/Image-source-2.png" />
+      <WrapperSections>
       {aboutSections.map((section, index) => (
         <Collapse key={index} title={section.title} content={section.content} />
       ))}
+      </WrapperSections>
       <Footer />
     </div>
   )

@@ -2,10 +2,11 @@ import { useState } from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
+
 const CarouselWrapper = styled.div`
   position: relative;
-  width: 100%;
-  height: 400px;
+  width: 1240px;
+  height: 415px;
   overflow: hidden;
   border-radius: 15px;
 
@@ -14,22 +15,35 @@ const CarouselWrapper = styled.div`
     height: 100%;
     object-fit: cover;
   }
+
+  @media(max-width:576px){
+  width: 100%;
+  height: 255px;
+  }
 `
 
 const Arrow = styled.button`
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.4);
-  color: white;
-  font-size: 30px;
-  padding: 10px;
-  border: none;
-  cursor: pointer;
+  top: 40%;
+  
   z-index: 10;
 
    left: ${(props) => (props.$left ? '20px' : 'auto')};
   right: ${(props) => (!props.$left ? '20px' : 'auto')};
+  background: transparent; /* Suppression de l'arrière-plan */
+  border: none; /* Suppression des bordures */
+  padding: 0; /* Suppression du padding pour éviter de l'espace autour */
+  cursor: pointer;
+  color: white;
+  font-size: 100px;
+
+   &:focus {
+    outline: none; /* Empêche l'affichage de l'outline */
+  }
+
+  @media(max-width:576px){
+  font-size: 50px;
+  }
 `
 
 const Counter = styled.div`
@@ -62,7 +76,7 @@ function Carousel({ pictures }) {
 
       {total > 1 && (
         <>
-          <Arrow $left onClick={prevImage}>‹</Arrow>
+          <Arrow $left onClick={prevImage}> ‹ </Arrow>
           <Arrow onClick={nextImage}>›</Arrow>
           <Counter>{index + 1} / {total}</Counter>
         </>

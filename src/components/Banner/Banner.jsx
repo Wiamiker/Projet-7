@@ -16,8 +16,10 @@ const BannerWrapper = styled.div`
   overflow: hidden;
 
     @media(max-width: 576px){
-    height: 100px;
+    height: 111px;
+    width: 335px;
     border-radius: 15px;
+    margin: auto;
     }
 `
 

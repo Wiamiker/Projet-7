@@ -10,12 +10,28 @@ const ErrorWrapper = styled.div`
 `
 
 const ErrorCode = styled.h1`
-  font-size: 10rem;
-  margin: 0;
+  font-size: 200px;
+  margin: auto;
+  width: 597px;
+  height: 263px;
+  text-align: center;
+
+  @media(max-width: 576px){
+  width: 198px;
+  height: 99px;
+  font-size: 100px;
+  margin-bottom: 100px;
+  }
 `
 
 const ErrorText = styled.p`
-  font-size: 1.5rem;
+  font-size: 36px;
+
+   @media(max-width: 576px){
+  font-size: 18px;
+  margin-bottom: 100px;
+  }
+
 `
 
 const ReturnLink = styled(Link)`
@@ -23,6 +39,11 @@ const ReturnLink = styled(Link)`
   margin-top: 30px;
   color: #000;
   text-decoration: underline;
+  font-size: 18px;
+
+   @media(max-width: 576px){
+  font-size: 14px;
+  }
 `
 
 function Error() {
