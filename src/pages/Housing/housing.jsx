@@ -26,7 +26,7 @@ const ContentWrapper = styled.div`
  @media(max-width: 576px){
     flex-direction: column;
     gap: 15px;
-  }
+}
 `
 
 const LeftBlock = styled.div`
