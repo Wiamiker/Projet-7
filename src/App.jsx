@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/home.jsx';
 import About from './pages/About/about.jsx';
-import Error from './components/Error/error.jsx'
+import Error from './pages/Error/error.jsx'
 import Housing from './pages/Housing/housing.jsx'
 import './App.css'
 
