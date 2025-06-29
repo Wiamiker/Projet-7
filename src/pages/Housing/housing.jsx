@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import Header from '../../components/Header/header'
 import Footer from '../../components/Footer/footer'
@@ -133,9 +133,9 @@ const StyledList = styled.ul`
 function Housing() {
   const { id } = useParams()
   const [housingData, setHousingData] = useState(null)
-  const [error, setError] = useState(false)
+  const navigate = useNavigate()
 
-  useEffect(() => {
+ useEffect(() => {
     fetch('/logements.json')
       .then((res) => {
         if (!res.ok) throw new Error('Erreur fetch')
@@ -144,15 +144,16 @@ function Housing() {
       .then((data) => {
         const found = data.find((logement) => logement.id === id)
         if (!found) {
-          setError(true)
+          navigate('/error', { replace: true })
         } else {
           setHousingData(found)
         }
       })
-      .catch(() => setError(true))
-  }, [id])
+      .catch(() => {
+        navigate('/error', { replace: true })
+      })
+  }, [id, navigate])
 
-  if (error) return <div>Logement introuvable</div>
   if (!housingData) return <div>Chargement...</div>
 
   return (
